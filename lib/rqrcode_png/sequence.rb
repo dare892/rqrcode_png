@@ -8,7 +8,7 @@ module RQRCodePNG
     def dark_squares_only(&block)
       @qr_code.modules.each_index do |row|
         @qr_code.modules.each_index do |column|
-          if @qr_code.dark?(row, column)
+          if @qr_code.checked?(row, column)
             yield row, column
           end
         end
@@ -26,4 +26,3 @@ module RQRCodePNG
     end
   end
 end
-
